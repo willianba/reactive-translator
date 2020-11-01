@@ -1,6 +1,6 @@
 package com.tcc.translator.service;
 
-import java.time.LocalDateTime;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.amazonaws.services.translate.AmazonTranslate;
@@ -64,7 +64,7 @@ public class TranslationService {
 
   private String generateFileName(String fileName, String targetLanguage) {
     StringBuilder sb = new StringBuilder();
-    return sb.append(LocalDateTime.now().hashCode())
+    return sb.append(UUID.randomUUID())
       .append("_")
       .append(targetLanguage)
       .append("_")
